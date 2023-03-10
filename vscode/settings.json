@@ -1,0 +1,11 @@
+{
+    "[astro]": {
+        "editor.defaultFormatter": "astro-build.astro-vscode"
+    },
+    "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'monospace', monospace",
+    "editor.fontLigatures": true,
+    "window.zoomLevel": 1,
+    "[python]": {
+        "editor.formatOnType": true
+    }
+}
