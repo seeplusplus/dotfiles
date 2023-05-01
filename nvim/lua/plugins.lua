@@ -12,6 +12,8 @@ local ensure_packer = function()
   return false
 end
 
+ensure_packer()
+
 return require('packer').startup(function(use)
 	-- Packer can manage itself
 	use 'wbthomason/packer.nvim'
