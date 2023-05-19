@@ -4,6 +4,7 @@ lsp.preset("recommended")
 
 lsp.ensure_installed({
   'rust_analyzer',
+  'tsserver'
 })
 
 lsp.on_attach(function(client, bufnr)
