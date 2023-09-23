@@ -4,7 +4,6 @@ local function split_buffer_n()
 	vim.cmd(vim.v.count1 .. "sbuffer")
 end
 
-vim.cmd([[ colorscheme tokyonight-night ]])
 builtin = require('telescope.builtin')
 
 --[[ 

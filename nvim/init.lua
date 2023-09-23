@@ -12,4 +12,5 @@ vim.g.netrw_winsize = 25
 
 require('plugins')
 require('set')
+require('tokyo')
 require('lsp')
