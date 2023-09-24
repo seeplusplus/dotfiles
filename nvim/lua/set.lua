@@ -16,6 +16,7 @@ vim.keymap.set("n", "<Leader> ", builtin.find_files)
 vim.keymap.set("n", "<Leader>l", builtin.live_grep)
 vim.keymap.set("n", "<Leader>g", builtin.git_files)
 
+vim.keymap.set("n", "<Leader>w", vim.cmd.write)
 vim.keymap.set("n", "<Leader>s", vim.cmd.split)
 vim.keymap.set("n", "<Leader>v", vim.cmd.vsplit)
 vim.keymap.set("n", "<Leader>q", vim.cmd.quit)
