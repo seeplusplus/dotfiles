@@ -26,6 +26,7 @@ return require('packer').startup(function(use)
 
 
 	use 'folke/tokyonight.nvim'
+  use 'terrastruct/d2-vim'
 	use {
 	    'VonHeikemen/lsp-zero.nvim',
 	    branch = 'v3.x',
@@ -46,6 +47,8 @@ return require('packer').startup(function(use)
 
 	  }
 
+  -- use "sindrets/diffview.nvim"
+  use "rhysd/conflict-marker.vim"
 	if packer_bootstrap then
 		require('packer').sync()
 	end
