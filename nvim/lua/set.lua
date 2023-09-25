@@ -20,6 +20,7 @@ vim.keymap.set("n", "<Leader>w", vim.cmd.write)
 vim.keymap.set("n", "<Leader>s", vim.cmd.split)
 vim.keymap.set("n", "<Leader>v", vim.cmd.vsplit)
 vim.keymap.set("n", "<Leader>q", vim.cmd.quit)
+vim.keymap.set("n", "<Leader>t", vim.cmd.tabnew)
 vim.keymap.set("n", "<C-h>", function () vim.cmd("noh") end)
 
 --  vim.keymap.set("n", "<Leader>b", split_buffer_n, {silent =true})
