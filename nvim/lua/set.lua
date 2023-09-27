@@ -15,6 +15,7 @@ vim.keymap.set("n", "<Leader>g", function () builtin.git_files(require('telescop
 vim.keymap.set("n", "<Leader> ", builtin.find_files)
 vim.keymap.set("n", "<Leader>l", builtin.live_grep)
 vim.keymap.set("n", "<Leader>g", builtin.git_files)
+vim.keymap.set("n", "ga", vim.lsp.buf.code_action)
 
 vim.keymap.set("n", "<Leader>w", vim.cmd.write)
 vim.keymap.set("n", "<Leader>s", vim.cmd.split)
