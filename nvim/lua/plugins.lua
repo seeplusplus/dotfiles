@@ -26,7 +26,7 @@ return require('packer').startup(function(use)
 
 
   use 'SirVer/ultisnips'
-	use 'folke/tokyonight.nvim'
+  use 'folke/tokyonight.nvim'
   use 'terrastruct/d2-vim'
 	use {
 	    'VonHeikemen/lsp-zero.nvim',
