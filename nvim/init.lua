@@ -38,3 +38,4 @@ require 'nvim-treesitter.configs'.setup {
     enable = true
   }
 }
+vim.g.astro_typescript = 'enable'

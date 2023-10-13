@@ -24,6 +24,7 @@ return require('packer').startup(function(use)
   }
   use 'SirVer/ultisnips'
   use 'folke/tokyonight.nvim'
+  use 'wuelnerdotexe/vim-astro'
   use 'terrastruct/d2-vim'
   use { "elixir-tools/elixir-tools.nvim", tag = "stable", requires = { "nvim-lua/plenary.nvim" }}
   use {
