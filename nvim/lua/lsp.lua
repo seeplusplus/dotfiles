@@ -81,3 +81,30 @@ cmp.setup({
     ['<C-u>'] = cmp.mapping.scroll_docs(-5),
   }),
 })
+
+local cmp = require 'cmp';
+
+cmp.setup {
+  snippet = {
+    expand = function(args)
+      vim.fn['UltiSnips#Anon'](args.body)
+    end
+  },
+  sources = cmp.config.sources({
+    { name = 'nvim_lsp' },
+    { name = 'ultisnips' }
+  },
+  {
+    { name = 'buffer' }
+  })
+}
+
+require 'nvim-treesitter.configs'.setup {
+  ensure_installed = { "rust", "elixir" },
+  sync_install = false,
+  auto_install = true,
+  highlight = {
+    enable = true
+  }
+}
+vim.g.astro_typescript = 'enable'
