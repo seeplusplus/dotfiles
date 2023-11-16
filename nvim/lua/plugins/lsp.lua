@@ -1,3 +1,4 @@
+local lsp = require'lspconfig';
 local lsp_zero = require('lsp-zero')
 
 lsp_zero.on_attach(function(client, bufnr)
@@ -6,8 +7,15 @@ lsp_zero.on_attach(function(client, bufnr)
   lsp_zero.default_keymaps({buffer = bufnr})
 end)
 
-require('mason').setup({})
-require('mason-lspconfig').setup({
+lsp_zero.set_sign_icons {
+  error = '✘',
+  warn = '▲',
+  hint = '⚑',
+  info = ''
+}
+
+require('mason').setup {}
+require('mason-lspconfig').setup {
   ensure_installed = {},
   handlers = {
     lsp_zero.default_setup,
@@ -16,16 +24,9 @@ require('mason-lspconfig').setup({
       require('lspconfig').lua_ls.setup(lua_opts)
     end,
   }
-})
+}
 
-lsp_zero.set_sign_icons({
-  error = '✘',
-  warn = '▲',
-  hint = '⚑',
-  info = ''
-})
-
-vim.diagnostic.config({
+vim.diagnostic.config {
   virtual_text = false,
   severity_sort = true,
   float = {
@@ -35,7 +36,7 @@ vim.diagnostic.config({
     header = '',
     prefix = '',
   },
-})
+}
 
 local cmp = require('cmp')
 local cmp_action = lsp_zero.cmp_action()
@@ -55,11 +56,12 @@ cmp.setup({
     documentation = cmp.config.window.bordered(),
   },
   sources = {
-    {name = 'path'},
-    {name = 'nvim_lsp'},
-    {name = 'nvim_lua'},
-    {name = 'buffer', keyword_length = 3},
-    {name = 'luasnip', keyword_length = 2},
+    { name = 'path' },
+    { name = 'nvim_lsp' },
+    { name = 'nvim_lua' },
+    { name = 'buffer', keyword_length = 3 },
+    { name = 'luasnip', keyword_length = 2 },
+    { name = 'ultisnips' }
   },
   mapping = cmp.mapping.preset.insert({
     -- confirm completion item
@@ -80,26 +82,14 @@ cmp.setup({
     ['<C-f>'] = cmp.mapping.scroll_docs(5),
     ['<C-u>'] = cmp.mapping.scroll_docs(-5),
   }),
-})
-
-local cmp = require 'cmp';
-
-cmp.setup {
   snippet = {
     expand = function(args)
       vim.fn['UltiSnips#Anon'](args.body)
     end
-  },
-  sources = cmp.config.sources({
-    { name = 'nvim_lsp' },
-    { name = 'ultisnips' }
-  },
-  {
-    { name = 'buffer' }
-  })
-}
+  }
+})
 
-require 'nvim-treesitter.configs'.setup {
+require('nvim-treesitter.configs').setup {
   ensure_installed = { "rust", "elixir" },
   sync_install = false,
   auto_install = true,
@@ -107,4 +97,5 @@ require 'nvim-treesitter.configs'.setup {
     enable = true
   }
 }
+
 vim.g.astro_typescript = 'enable'
